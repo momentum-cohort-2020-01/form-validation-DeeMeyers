@@ -37,38 +37,38 @@
 //Step Two -working on it
 
 let blanks = document.querySelectorAll("input");
-console.log(blanks);
 let form = document.querySelector('#parking-form');
 
 form.addEventListener("submit", function(event){
     event.preventDefault();//ask what this is doing
+    
     for(let item of blanks){
         
-        if( item.value == ''){
-            console.log("invalid");
+        if(item.value == ''){
+        
             item.parentElement.classList.add("input-invalid");
-            let parentEl = item.parentNode;
-            let errorMessage = document.createElement('p');
-            errorMessage.classList.add("input-hint");
-            let errorText = document.createTextNode("*attention");
-            errorMessage.appendChild(errorText); 
-            item.parentElement.appendChild(errorMessage);
-
-            // item.appendChild(errorMessage);
-
-
+            if(hintVar != "second"){
+                let parentEl = item.parentNode;
+                let errorMessage = document.createElement('p');
+                errorMessage.classList.add("input-hint");
+                let errorText = document.createTextNode("*attention");
+                errorMessage.appendChild(errorText); 
+                item.parentElement.appendChild(errorMessage);
+            
+            }
+            else{
+    
+            }
+            
+        }
             
             
         
-
-        }
         else{
-            console.log("valid");
             item.parentElement.classList.add("input-valid");
-            
-
-
-        }
+        };
+        
+        
     }
 })
 
